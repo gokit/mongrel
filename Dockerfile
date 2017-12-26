@@ -14,6 +14,7 @@ VOLUME /mnt/db/mongodb
 
 # Copy mongodb configuration to the etc folder.
 COPY conf/mongodb.cnf /etc/mongodb/mongodb.cnf
+COPY conf/db.js /mnt/db/mongodb/db.js
 
 EXPOSE 27017 28017
 

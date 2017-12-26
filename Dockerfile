@@ -2,7 +2,7 @@ FROM alpine:edge
 MAINTAINER Ewetumo Alexander <trinoxf@gmail.com>
 
 RUN apk update && apk upgrade
-RUN apk add --no-cache mongodb go && rm /usr/bin/mongoperf && && rm -rf /var/cache/apk/*
+RUN apk add --no-cache mongodb go && rm /usr/bin/mongoperf && rm -rf /var/cache/apk/*
 
 # Create the db directory and expose it for usage.
 # to add group: groupadd --system mongodb

@@ -1,4 +1,4 @@
-dbpath=/mnt/db/mongodb
-logpath=/mnt/db/mongodb/logs/mongodb.log
+dbpath=/data/db/mongodb
+logpath=/data/db/mongodb/logs/mongodb.logs
 logappend=true
 bind_ip = 0.0.0.0

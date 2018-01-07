@@ -1,7 +1,6 @@
 FROM alpine:edge
 MAINTAINER Ewetumo Alexander <trinoxf@gmail.com>
 
-RUN apk update && apk upgrade
 RUN apk add --no-cache mongodb && rm /usr/bin/mongoperf && rm -rf /var/cache/apk/*
 
 # Create the db directory and expose it for usage.
@@ -11,8 +10,8 @@ RUN apk add --no-cache mongodb && rm /usr/bin/mongoperf && rm -rf /var/cache/apk
 # RUN adduser -S -g mongodb mongodb
 RUN mkdir -p /data/db/mongodb/logs
 RUN mkdir -p /etc/mongodb
-RUN chown -R mongodb /etc/mongodb
-RUN chown -R mongodb /data/db/mongodb
+RUN chown -R mongodb:mongodb /etc/mongodb
+RUN chown -R mongodb:mongodb /data/db/mongodb
 VOLUME /data/db/mongodb
 
 # Copy mongodb configuration to the etc folder.

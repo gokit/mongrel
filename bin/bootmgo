@@ -2,7 +2,7 @@
 
 /usr/bin/mongod --config /etc/mongodb/mongodb.cnf --port $MONGODB_PORT $@
 
-if [ "$AUTH" == "" ]; then
+if [ "$AUTH" != "" ]; then
  sleep 2s
  /usr/bin/mongo /data/db/mongodb/db.js
 fi

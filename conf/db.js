@@ -1,6 +1,7 @@
-use admin;
+db = new Mongo();
 
-db.createUser(
+admin = db.getDB("admin");
+admin.createUser(
 	{
 		user: "db_admin",
 		pwd: "123456",
@@ -8,12 +9,13 @@ db.createUser(
 	}
 );
 
-use test_db;
 
-db.createUser(
+test = db.getDB("test_db");
+test.createUser(
 	{
-		user: "db_user",
+		user: "test_user",
 		pwd: "123456",
-		roles: [ { role: "userAdminAnyDatabase", db: "test_db" } ]
+		roles: [ { role: "userAdmin", db: "test_db" } ]
 	}
 );
+
